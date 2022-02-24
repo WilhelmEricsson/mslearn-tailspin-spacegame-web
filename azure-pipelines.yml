@@ -36,7 +36,7 @@ steps:
 
   - script: 'echo "$(Build.DefinitionName), $(Build.BuildId), $(Build.BuildNumber)" > buildinfo.txt'
     displayName: 'Write build info'
-    workingDirectory: $(wwwwRootDir)
+    workingDirectory: $(wwwRootDir)
 
   - task: DotNetCoreCLI@2
     displayName: 'Restore project dependencies'
