@@ -13,8 +13,9 @@ pool:
 
 variables:
   buildConfiguration: 'Release'
-  wwwwRootDir: 'Tailspin.SpaceGame.Web/wwwroot'
+  wwwRootDir: 'Tailspin.SpaceGame.Web/wwwroot'
   dotNetSDKVersion: '5.x'
+
 steps:
   - task: UseDotNet@2
     displayName: 'Use .Net SDK $(dotNetSDKVersion)'
@@ -35,7 +36,7 @@ steps:
 
   - script: 'echo "$(Build.DefinitionName), $(Build.BuildId), $(Build.BuildNumber)" > buildinfo.txt'
     displayName: 'Write build info'
-    workingDirectory:  $(wwwwRootDir)
+    workingDirectory: $(wwwwRootDir)
 
   - task: DotNetCoreCLI@2
     displayName: 'Restore project dependencies'
